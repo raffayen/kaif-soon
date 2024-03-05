@@ -1,7 +1,6 @@
-* {
+html, body, h1, .subtitle, .date {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -14,32 +13,35 @@ body {
     background-color: #000;
     color: #fff;
     text-align: center;
+    padding: 0 20px;
 }
 
-.header-container, .main-container, .countdown-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
+::selection {
+    background-color: white;
+    color: black;
 }
 
-h1, .subtitle, .date, .countdown {
-    margin: 1rem 0;
-}
-
-.subtitle {
-    color: #808080;
-}
-
-.countdown-container {
-    margin-bottom: 0;
-}
 
 h1 {
-    font-size: 4rem;
+    font-size: 4em;
     margin-bottom: 0.5rem;
 }
 
-.subtitle, .date, .countdown {
+.date {
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.subtitle, .countdown {
     font-size: 1.25rem;
+}
+
+.subtitle,
+.countdown {
+    color: #808080;
+}
+
+.date {
+    margin-top: 3rem;
 }

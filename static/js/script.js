@@ -6,20 +6,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        if (distance < 120000) {
+        if (distance < 3600000) {
             clearInterval(interval);
-            countdownElement.innerText = "In wenigen Minuten verfügbar";
+            countdownElement.innerText = "Die Website wird innerhalb einer Stunde verfügbar sein.";
             return;
         }
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
         let countdownText = '';
         if (days > 0) countdownText += `${days} Tag${days !== 1 ? 'e' : ''} `;
         if (hours > 0) countdownText += `${hours} Stunde${hours !== 1 ? 'n' : ''} `;
-        if (minutes > 0) countdownText += `${minutes} Minuten`;
 
         countdownElement.innerText = countdownText.trim();
     }
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const interval = setInterval(updateCountdown, 1000);
 });
 
-// Универсальная функция для корректировки высоты
 function adjustHeight() {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--viewport-height', `${vh}px`);
